@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 
 import '../../models/cart_item.dart';
 
