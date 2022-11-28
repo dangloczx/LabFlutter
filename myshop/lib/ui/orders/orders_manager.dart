@@ -1,6 +1,7 @@
+import 'package:flutter/material.dart';
 import '../../models/cart_item.dart';
 import '../../models/order_item.dart';
-class OrdersManager {
+class OrdersManager with ChangeNotifier{
   final List<OrderItem> _orders = [
     OrderItem(
       id: 'o1',
