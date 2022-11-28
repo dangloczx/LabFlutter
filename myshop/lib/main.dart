@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:myshop/ui/products/product_detail_screen.dart';
+import 'package:myshop/ui/products/products_manager.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key:key);
 
   // This widget is the root of your application.
   @override
@@ -21,8 +23,10 @@ class MyApp extends StatelessWidget {
           secondary: Colors.deepOrange,
         ),
       ),
-        home :Container(
-          color: Colors.green,
+        home: SafeArea(
+          child: ProductDetailScreen(
+            ProductsManager().items[0],
+          ),
         ),
       );
   }
