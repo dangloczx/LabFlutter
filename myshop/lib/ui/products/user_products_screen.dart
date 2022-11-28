@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'user_product_list_tile.dart';
 import 'products_manager.dart';
 
-class UserProductsScreen extends StatelessWidget{
-  const UserProductsScreen ({super.key});
+class UserProductsScreen extends StatelessWidget {
+  const UserProductsScreen({super.key});
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     final productsManager = ProductsManager();
     return Scaffold(
       appBar: AppBar(
@@ -21,23 +21,25 @@ class UserProductsScreen extends StatelessWidget{
       ),
     );
   }
-  Widget buildUserProductListView(ProductsManager productsManager){
+
+  Widget buildUserProductListView(ProductsManager productsManager) {
     return ListView.builder(
-itemCount: productsManager.itemCount,
-itemBuilder: (ctx, i) => Column(
-  children: [
-    UserProductListTile(
-      productsManager.items[i],
-    ),
-    const Divider(),
-  ],
-),
+      itemCount: productsManager.itemCount,
+      itemBuilder: (ctx, i) => Column(
+        children: [
+          UserProductListTile(
+            productsManager.items[i],
+          ),
+          const Divider(),
+        ],
+      ),
     );
   }
-  Widget buildAddButton(){
+
+  Widget buildAddButton() {
     return IconButton(
       icon: const Icon(Icons.add),
-      onPressed: (){
+      onPressed: () {
         print('Go to edit product screen');
       },
     );

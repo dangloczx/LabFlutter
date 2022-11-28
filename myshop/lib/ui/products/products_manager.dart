@@ -1,6 +1,7 @@
 import '../../models/product.dart';
-class ProductsManager{
-final List<Product> _items = [
+
+class ProductsManager {
+  final List<Product> _items = [
     Product(
       id: 'p1',
       title: 'Red Shirt',
@@ -36,14 +37,15 @@ final List<Product> _items = [
       isFavorite: true,
     ),
   ];
-  int get itemCount{
+  int get itemCount {
     return _items.length;
   }
 
-  List<Product> get items{
+  List<Product> get items {
     return [..._items];
   }
-  List<Product> get favoriteItems{
+
+  List<Product> get favoriteItems {
     return _items.where((item) => item.isFavorite).toList();
   }
 }

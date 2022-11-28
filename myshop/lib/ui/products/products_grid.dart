@@ -3,19 +3,19 @@ import 'package:flutter/material.dart';
 import 'product_grid_tile.dart';
 import 'products_manager.dart';
 
-class ProductsGrid extends StatelessWidget{
+class ProductsGrid extends StatelessWidget {
   final bool showFavorites;
 
-  const ProductsGrid(this.showFavorites,{super.key});
+  const ProductsGrid(this.showFavorites, {super.key});
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     final productManager = ProductsManager();
     final products =
-    showFavorites ? productManager.favoriteItems : productManager.items;
+        showFavorites ? productManager.favoriteItems : productManager.items;
     return GridView.builder(
       padding: const EdgeInsets.all(10.0),
       itemCount: products.length,
-      itemBuilder: (ctx,i) => ProductGridTile(products[i]),
+      itemBuilder: (ctx, i) => ProductGridTile(products[i]),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
         childAspectRatio: 3 / 2,
