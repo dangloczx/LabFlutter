@@ -1,6 +1,12 @@
+// ignore_for_file: unused_import, unused_element
+
+import 'package:flutter/material.dart';
+import 'package:myshop/ui/shared/dialog_utils.dart';
 import '../../models/product.dart';
 import 'package:flutter/foundation.dart';
-
+import 'package:provider/provider.dart';
+import '../screen.dart';
+import './edit_product_screen.dart';
 class ProductsManager with ChangeNotifier {
   final List<Product> _items = [
     Product(
@@ -85,4 +91,7 @@ class ProductsManager with ChangeNotifier {
     _items.removeAt(index);
     notifyListeners();
   }
+  
+  
 }
+
